@@ -10,9 +10,12 @@ function App(props:any) {
         <div>
             <div>
                 <h1> Click to open dialog with table </h1>
+                
                 <MenuComponent/>
                 <Button onClick={() => { setIsOpen(true) }}>Open Dialog</Button>
                 <FirstComponent isOpen={isOpen} onCloseDialog={(val:boolean)=>{setIsOpen(val)}} />
+                
+                
             </div>
         </div>
 
