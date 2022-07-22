@@ -20,71 +20,42 @@ export const MenuComponent: React.FC = () => {
     a.push(randElem());
     setArray(a);
   };
-  // const menu = (
-  //   <Menu  style={{ width: "200px" }}>
-  //       <MenuItem icon="add" text="Add element" onClick={addElement} />{" "}
+  const menu = (
+    <Menu  style={{ width: "200px" }}>
+        <MenuItem icon="add" text="Add element" onClick={addElement} />{" "}
         
-  //       <MenuItem icon="menu-open" text="Elements"
+        <MenuItem icon="menu-open" text="Elements"
           
-  //         children={array.map((element, index) => (
-  //           <MenuItem icon="small-plus" key={index} text={element} />
-  //         ))}
-  //       />
-  //     </Menu>
-  // );
-
-  console.log("render");
-  return (
-    <Card>
-      <Popover2 position={Position.RIGHT_TOP} className={Classes.DARK}   >
-      
-      <Menu  style={{ width: "200px" }}>
-        <MenuItem icon="add" text="Add element" onClick={addElement} />
-        
-        <MenuItem icon="menu-open" text="Elements" children={array.map((element, index) => (
+          children={array.map((element, index) => (
             <MenuItem icon="small-plus" key={index} text={element} />
           ))}
-          
         />
       </Menu>
+  );
+  return (
+    <Popover2 content={menu} position={Position.RIGHT_TOP} className={Classes.DARK} interactionKind={PopoverInteractionKind.CLICK}   >
+      <Button intent="primary">Open Menu</Button>
       </Popover2>
-      </Card>
   );
 
-  
+  // console.log("render");
 
-  // const addElement = () => { 
-  //   let array:number[] = arrayList
-  //   array.push(randElem()) 
-  //   console.log('arrNew', array);
-  //   setArrayList(array)
-  // }
-  // const getMenuItem = () => { console.log("arrL",arrayList)
-  //   let newMenuItem = arrayList.map((element, index) => { console.log(111); return <MenuItem icon="small-plus" key={index} text={element} /> });
-  //   return newMenuItem
-  // } 
-  // const menu = (
-  //   <Menu >
-  //     <MenuItem icon="plus" text="Add element" onClick={addElement} /> {/**onClick={() => addElement()} */}
-  //     <MenuItem  icon="menu-open" text="Elements">   
-  //       {/* {getMenuItem()} */}
-  //       { arrayList.map((element, index) =>  <MenuItem icon="small-plus" key={index} text={index} /> )}
-  //     </MenuItem>
-  //   </Menu> 
-  //// );
+  // return (
+  //   <Card>
+  //     <Popover2 position={Position.RIGHT_TOP} className={Classes.DARK}   >
+      
+  //     <Menu  style={{ width: "200px" }}>
+  //       <MenuItem icon="add" text="Add element" onClick={addElement} />
+        
+  //       <MenuItem icon="menu-open" text="Elements" children={array.map((element, index) => (
+  //           <MenuItem icon="small-plus" key={index} text={element} />
+  //         ))}
+          
+  //       />
+  //     </Menu>
+  //     </Popover2>
+  //     </Card>
+  // );
   
-
-//   return (
-    // <Popover2 content={menu} position={Position.RIGHT_TOP} className={Classes.DARK} >
-    //   <Button intent="primary" text="OpenMenu" />
-    // </Popover2>
-// <Menu >
-//       <MenuItem icon="plus" text="Add element" onClick={addElement} /> {/**onClick={() => addElement()} */}
-//       <MenuItem icon="menu-open" text="Elements">   
-//         {/* {getMenuItem()} */}
-//         { arrayList.map((element, index) =>  <MenuItem icon="small-plus" key={index} text={index} /> )}
-//       </MenuItem>
-//     </Menu> 
-//   );
 };
 
